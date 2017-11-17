@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+void vex(int &a, int b, int *c){
+ *c += b;
+ b += a;
+ a += *c;
+}
+int main(){
+ int x, y, *z;
+ x = 1;
+ y = 2;
+ z = &y;
+ vex(x, y, z);
+ cout << x << ", " << y << ", " << *z << endl;
+ vex(*z, *z, z);
+ cout << x << ", " << y << ", " << *z << endl;
+}
+
